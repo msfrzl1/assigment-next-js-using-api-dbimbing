@@ -8,15 +8,17 @@ export async function getServerSideProps() {
    return { props: { foods: resp.data.data || [] } };
 }
 
-export default function Home({ foods }) {
+export default function Toit({ foods }) {
    return (
-      <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-4 pt-24 pb-5 px-5 bg-slate-200'>
-         {foods.map((food) => (
-            <Cart
-               key={food.id}
-               food={food}
-            />
-         ))}
+      <div>
+         <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-4 pt-24 pb-5 px-5 bg-slate-200'>
+            {foods.map((food) => (
+               <Cart
+                  key={food.id}
+                  food={food}
+               />
+            ))}
+         </div>
       </div>
    );
 }
